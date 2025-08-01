@@ -23,12 +23,12 @@ The 3 health checks used by Kubernetes are:
 ### Installation
 Add a reference to the `Aspire.HealthChecks.Kubernetes` project or package in your ASP.NET Core application.
 ```powershell
-dotnet add package Aspire.HealthChecks.Kubernetes
+dotnet add package HealthChecks.Kubernetes.Aspire
 ```
 
 If you are using the Aspire Dashboard, add a reference to the `Aspire.Hosting.HealthChecks.Kubernetes` project in your Aspire AppHost project.
 ```powershell
-dotnet add package Aspire.Hosting.HealthChecks.Kubernetes
+dotnet add package HealthChecks.Kubernetes.Aspire.Hosting
 ```
 
 ### Usage
