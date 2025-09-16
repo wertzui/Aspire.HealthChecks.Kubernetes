@@ -23,4 +23,19 @@ public static class KubernetesHealthChecksResourceBuilderExtensions
 
         return builder;
     }
+    /// <summary>
+    /// Adds Kubernetes health checks to the resource.
+    /// The checks are:
+    /// - Startup: Checks if the application is starting up correctly.
+    /// - Live: Checks if the application is live and accepting requests.
+    /// - Ready: Checks if the application is ready to serve traffic.
+    /// </summary>
+    public static IResourceBuilder<ExternalServiceResource> WithKubernetesHealthChecks(this IResourceBuilder<ExternalServiceResource> builder, string startupPath = Constants.StartupPath, string livePath = Constants.LivePath, string readyPath = Constants.ReadyPath)
+    {
+        builder.WithHttpHealthCheck(startupPath);
+        builder.WithHttpHealthCheck(livePath);
+        builder.WithHttpHealthCheck(readyPath);
+
+        return builder;
+    }
 }
