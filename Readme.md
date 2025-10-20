@@ -62,7 +62,7 @@ await app.RunAsync();
 ```
 #### Aspire AppHost
 
-If you are using the Aspire Dashboard, you can easily add the Kubernetes health checks to your Aspire AppHost project.
+If you are using the Aspire Dashboard, you can easily add the Kubernetes health probes to your Aspire AppHost project.
 This will automatically register the health checks with the Aspire Dashboard, allowing you to monitor the health of your application from the dashboard.
 
 In your `Program.cs`:
@@ -72,12 +72,27 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 /// Add your application
 builder.AddProject<MyApp>(nameof(MyApp))
-	.WithKubernetesHealthChecks();
+	.WithKubernetesHealthProbes();
 
 var app = builder.Build();
 
 await app.RunAsync();
 ```
 
+If you are dealing with `ExternalServiceResource`, or do not want probes, you can use `WithKubernetesHealthChecks()` instead.
+
+In your `Program.cs`:
+
+```csharp
+var builder = DistributedApplication.CreateBuilder(args);
+
+/// Add your application
+builder.AddExternalService("MyExternalService", "https://example.com")
+	.WithKubernetesHealthChecks();
+
+var app = builder.Build();
+
+await app.RunAsync();
+```
 ## License
 This project is licensed under the Unlicense.
