@@ -15,15 +15,15 @@ public record HealthProbeConfiguration
         /// <summary>
         /// The default configuration for the startup health probe.
         /// </summary>
-        public static HealthProbeConfiguration Startup => new() { EndpointName = Constants.StartupPath };
+        public static HealthProbeConfiguration Startup => new() { Path = Constants.StartupPath };
         /// <summary>
         /// The default configuration for the liveness health probe.
         /// </summary>
-        public static HealthProbeConfiguration Liveness => new() { EndpointName = Constants.LivePath };
+        public static HealthProbeConfiguration Liveness => new() { Path = Constants.LivePath };
         /// <summary>
         /// The default configuration for the readiness health probe.
         /// </summary>
-        public static HealthProbeConfiguration Readiness => new() { EndpointName = Constants.ReadyPath };
+        public static HealthProbeConfiguration Readiness => new() { Path = Constants.ReadyPath };
     }
 
     /// <summary>
