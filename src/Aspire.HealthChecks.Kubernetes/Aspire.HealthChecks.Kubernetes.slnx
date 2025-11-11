@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Aspire.HealthChecks.Kubernetes/Aspire.HealthChecks.Kubernetes.csproj" />
+  <Project Path="Aspire.HealthCkecks.Kubernetes.Common/Aspire.HealthCkecks.Kubernetes.Common.csproj" />
+  <Project Path="Aspire.Hosting.HealthChecks.Kubernetes/Aspire.Hosting.HealthChecks.Kubernetes.csproj" />
+</Solution>

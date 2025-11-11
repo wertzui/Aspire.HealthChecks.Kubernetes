@@ -1,21 +1,24 @@
 # Aspire.HealthChecks.Kubernetes
+[![NuGet](https://img.shields.io/nuget/v/HealthChecks.Kubernetes.Aspire.svg)](https://www.nuget.org/packages/HealthChecks.Kubernetes.Aspire/)
+[![NuGetDownloads](https://img.shields.io/nuget/dt/HealthChecks.Kubernetes.Aspire.svg)](https://www.nuget.org/packages/HealthChecks.Kubernetes.Aspire/)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](LICENSE)
 
-Aspire.HealthChecks.Kubernetes provides extension methods to easily add Kubernetes-related health checks to your ASP.NET Core applications and the Aspire Dashboard.
+Aspire.HealthChecks.Kubernetes provides extension methods to easily add Kubernetes-related probes and health checks to your ASP.NET Core applications and the Aspire Dashboard.
 These health checks help monitor the health of your application in a Kubernetes environment by checking the status of the Kubernetes API, nodes, and pods.
 You can use it with, or without the Aspire integration.
 
 ## About Kubernetes Health Checks
-Kubernetes health checks are essential for ensuring that your application is running smoothly within a Kubernetes cluster.
+Kubernetes health probes are essential for ensuring that your application is running smoothly within a Kubernetes cluster.
 They allow you to monitor the health of the Kubernetes API, nodes, and pods, providing insights into the operational status of your application.
 These checks can be integrated into your ASP.NET Core application to provide a robust health monitoring solution.
-The 3 health checks used by Kubernetes are:
+The 3 health probes used by Kubernetes are:
 - Startup: Checks if the application has started successfully.
 - Live: Checks if the application is still running and responsive.
 - Ready: Checks if the application is ready to handle requests.
 
 ## Features
 - Simple extension method to register all Kubernetes health checks
-- Designed for .NET 9 and ASP.NET Core applications
+- Designed for .NET 10 and ASP.NET Core applications
 - Easily extensible for custom health checks
 
 ## Getting Started
@@ -63,7 +66,7 @@ await app.RunAsync();
 #### Aspire AppHost
 
 If you are using the Aspire Dashboard, you can easily add the Kubernetes health probes to your Aspire AppHost project.
-This will automatically register the health checks with the Aspire Dashboard, allowing you to monitor the health of your application from the dashboard.
+This will automatically register the health probes and checks with the Aspire Dashboard, allowing you to monitor the health of your application from the dashboard.
 
 In your `Program.cs`:
 
